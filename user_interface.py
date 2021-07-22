@@ -94,7 +94,7 @@ def try_parse_int(value):
     """Attempts to parse a string into an integer, returns 0 if unable to parse. No errors."""
     try:
         return int(value)
-    except value: # TODO ! Revisit this
+    except: # ? value: # TODO ! Revisit this
         return 0
 
 
