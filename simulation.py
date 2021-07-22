@@ -5,6 +5,7 @@ from soda_machine import SodaMachine
 
 class Simulation:
     def __init__(self):
+        # tbh i dont yet know why this is empty
         pass
 
     @staticmethod
