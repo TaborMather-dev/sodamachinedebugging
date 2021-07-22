@@ -1,3 +1,6 @@
+from wallet import Wallet
+from backpack import Backpack
+import user_interface
 
 
 class Customer:
@@ -37,7 +40,7 @@ class Customer:
             self.wallet.money.append(coins_list)
 
     def add_can_to_backpack(self, dispensed_can):
-        """Adds instance of a can into backpack's puchased_cans list. No errors"""
+        """Adds instance of a can into backpack's purchased_cans list. No errors"""
         self.backpack.purchased_cans.append(dispensed_can)
 
     def check_coins_in_wallet(self):
