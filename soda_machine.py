@@ -1,31 +1,33 @@
-from coins import Coin
-from cans import Can
-import user_interface
 
+import user_interface
+import coins
+import cans
 
 class SodaMachine:
     def __init__(self):
         self.register = []
         self.inventory = []
+        self.fill_register()
+        self.fill_inventory()
 
     def fill_register(self):
         """Method will fill SodaMachine's register with certain amounts of each coin when called."""
-        for index in range(8):
+        for index in range(1): # 8
             self.register.append(coins.Quarter())
-        for index in range(10):
+        for index in range(1): # 10
             self.register.append(coins.Dime())
-        for index in range(20):
+        for index in range(1): # 20
             self.register.append(coins.Nickel())
-        for index in range(50):
+        for index in range(1): # 50
             self.register.append(coins.Penny())
 
     def fill_inventory(self):
         """Method will fill SodaMachine's cans list with certain amounts of each can when called."""
-        for index in range(10):
+        for index in range(1): # 10
             self.inventory.append(cans.Cola())
-        for index in range(10):
+        for index in range(1): # 10
             self.inventory.append(cans.OrangeSoda())
-        for index in range(10):
+        for index in range(1): # 10
             self.inventory.append(cans.RootBeer())
 
     def begin_transaction(self, customer):

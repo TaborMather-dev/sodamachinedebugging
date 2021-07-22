@@ -8,19 +8,19 @@ class Simulation:
         # tbh i dont yet know why this is empty
         pass
 
-    @staticmethod
-    def run_simulation():
+    #@staticmethod # ? STATIC OR NOT - I MAY NEVER KNOW :(
+    def run_simulation(self):
         """The central method called in main.py."""
         customer = Customer()
         soda_machine = SodaMachine()
-        will_proceed = False
+        will_proceed = True
         while will_proceed:
             user_option = user_interface.simulation_main_menu()
             if user_option == "1":
                 soda_machine.begin_transaction(customer)
             elif user_option == "2":
-                customer.check_coins_in_wallet()
+                self.customer.check_coins_in_wallet() # ? DOES THIS NEED "self."?  
             elif user_option == "3":
-                customer.check_backpack()
+                self.customer.check_backpack() # ? DOES THIS NEED "self."? 
             else:
                 will_proceed = False

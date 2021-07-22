@@ -9,11 +9,11 @@ class Wallet:
 
     def fill_wallet(self):
         # TODO: """Method will fill wallet's money list with certain amount of each type of coin when called."""
-        for index in range(8):
+        for index in range(1): # 8
             self.money.append(coins.Quarter())
-        for index in range(10):
+        for index in range(1): # 10
             self.money.append(coins.Dime())
-        for index in range(20):
+        for index in range(1): # 20
             self.money.append(coins.Nickel())
-        for index in range(50):
+        for index in range(1): # 50
             self.money.append(coins.Penny())
