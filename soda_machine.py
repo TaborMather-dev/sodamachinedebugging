@@ -12,22 +12,22 @@ class SodaMachine:
 
     def fill_register(self):
         """Method will fill SodaMachine's register with certain amounts of each coin when called."""
-        for index in range(1): # 8
+        for index in range(8):
             self.register.append(coins.Quarter())
-        for index in range(1): # 10
+        for index in range(10):
             self.register.append(coins.Dime())
-        for index in range(1): # 20
+        for index in range(20):
             self.register.append(coins.Nickel())
-        for index in range(1): # 50
+        for index in range(50):
             self.register.append(coins.Penny())
 
     def fill_inventory(self):
         """Method will fill SodaMachine's cans list with certain amounts of each can when called."""
-        for index in range(1): # 10
+        for index in range(10):
             self.inventory.append(cans.Cola())
-        for index in range(1): # 10
+        for index in range(10):
             self.inventory.append(cans.OrangeSoda())
-        for index in range(1): # 10
+        for index in range(10):
             self.inventory.append(cans.RootBeer())
 
     def begin_transaction(self, customer):
@@ -39,8 +39,8 @@ class SodaMachine:
     def run_transaction(self, customer):
 
         selected_soda_name = user_interface.soda_selection(self.inventory)
-
-        selected_soda = self.get_inventory_soda(selected_soda_name)
+        # ! added customer to line 43, check on this later
+        customer.selected_soda = self.get_inventory_soda(selected_soda_name)
 
         customer_payment = customer.gather_coins_from_wallet(selected_soda_name)
 
@@ -119,7 +119,7 @@ class SodaMachine:
         """Takes in a list of coins, returns the monetary value of list."""
         #for coin in coin_list:
         total_value = sum(coin_list)
-        coin.value = total_value
+        coins.value = total_value
         return round(total_value, 2)
 
     def get_inventory_soda(self, selected_soda_name):
@@ -137,4 +137,4 @@ class SodaMachine:
     def deposit_coins_into_register(self, coin_list):
         """Takes in list of coins as argument, adds each coin from list to the register"""
         for coin in coin_list:
-            self.register.append(coin_list)
+            self.register.append(coin_list[coin])

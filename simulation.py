@@ -14,7 +14,6 @@ class Simulation:
         """The central method called in main.py."""
         backpack = Backpack()
         customer = Customer()
-        purchased_cans = backpack.purchased_cans
         soda_machine = SodaMachine()
         will_proceed = True
         while will_proceed:
@@ -22,9 +21,9 @@ class Simulation:
             if user_option == 1:
                 soda_machine.begin_transaction(customer)
             elif user_option == 2:
-                customer.check_coins_in_wallet() # ? DOES THIS NEED "self."?  
+                customer.check_coins_in_wallet()
             elif user_option == 3:
-                customer.check_backpack(backpack, purchased_cans) # ? DOES THIS NEED "self."? 
+                customer.check_backpack(backpack, backpack.purchased_cans)
             else:
                 will_proceed = False
         
